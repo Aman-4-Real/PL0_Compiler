@@ -1,0 +1,65 @@
+var n, a, b, c, max;
+procedure rec;
+begin
+    if n # 0 then
+        begin
+            write(n);
+            n := n - 1;
+            call rec;
+        end; 
+end;
+
+procedure P;
+    const x = 99;
+    procedure Q;
+      var a, b, n, sum;
+      procedure  R;
+      begin
+        write(x);
+      end;
+ 	  begin
+      read(a);
+      read(n);
+      sum := 0;
+  		if n > 0 then
+		    if n < 10 then
+        while n > 0 do
+        begin   
+          sum := sum + a;
+          n := n - 1;
+       	end;
+      write(sum);
+      call R;
+    end;
+begin
+	read(a);
+	read(b);
+	read(c);
+	if a > b then max := a
+	 else max := b;
+	if max > c then max := max
+	 else max := c;
+	write(max);
+	call Q; 
+end;
+
+procedure I;
+var a, input;
+begin
+    read(input);
+    a := 0;
+    case input:
+        1: a:= 8; write(input);
+        2: a:= 5; write(input);
+        3: write(input);
+    endcase;
+    write(a);
+end;
+
+begin
+    read(n);
+    write(n);
+    call rec;
+    call P;
+    call I;
+end.

@@ -1,0 +1,60 @@
+
+var n, m, i, j, digit(1:5);
+
+procedure init;
+begin
+    i := 1;
+    while i < 6 do
+        begin
+            digit(i) := 0;
+            i := i + 1;
+        end;
+end;
+
+procedure parse;
+begin
+	i := 0;
+	while n != 0 do
+	    begin
+	        m := n / 10;
+            i := i + 1;
+            digit(i) := n - m * 10;
+	        n := m;
+	    end;
+end;
+
+procedure writedigit;
+begin
+    j := i;
+    i := 1;
+    repeat
+        write(digit(i));
+        i := i + 1
+    until digit(i) = 0;
+    i := j;
+end;
+
+procedure reverseit;
+begin
+    j := i;
+    i := 1;
+    n := 0;
+    repeat
+        n := n * 10 + digit(i);
+        i := i + 1
+    until i > j;
+    i := j;
+end;
+
+begin
+    read(n);
+    if n <= 99999 then
+        begin
+            call init;
+            call parse;
+            write(i);
+            call writedigit;
+            call reverseit;
+            write(n);
+        end;
+end.

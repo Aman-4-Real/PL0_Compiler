@@ -1,0 +1,19 @@
+var a, b, c, n;
+
+procedure I;
+var input, a, b;
+begin
+    read(input);
+    case input:
+        1: a := 5;
+        2: write(input);
+        3: write(input);
+    endcase;
+    write(a);
+end;
+
+begin
+    read(n);
+    write(n);
+    call I;
+end.
