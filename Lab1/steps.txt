@@ -1,0 +1,4 @@
+1.进入当前文件夹
+2.flex lex.l
+3.编译c
+4.lex.yy.exe < max.pl0

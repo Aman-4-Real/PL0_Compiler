@@ -1,0 +1,27 @@
+var m, n, r, q;
+
+procedure gcd;
+begin
+    repeat
+        q := m / n;
+        r := m - q * n;
+        m := n;
+        n := r;
+    until r = 0
+end;
+
+begin
+    read(m);
+    read(n);
+    if m < n then
+        begin
+            r := m;
+            m := n;
+            n := r;
+        end;
+
+    begin
+        call gcd;
+        write(m);
+    end;
+end.
