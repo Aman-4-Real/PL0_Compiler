@@ -1,0 +1,12 @@
+var n, a, b, c, max;
+procedure rec;
+begin
+    if n # 0 then
+      write(n);
+end;
+
+begin
+    read(n);
+    call P;
+    call rec;
+end.

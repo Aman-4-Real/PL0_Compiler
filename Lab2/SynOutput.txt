@@ -1,0 +1,266 @@
+IdentiObj -> IDENTIFIER
+IdentiObj -> IdentiObj, IDENTIFIER
+IdentiObj -> IdentiObj, IDENTIFIER
+IdentiObj -> IdentiObj, IDENTIFIER
+IdentiObj -> IdentiObj, IDENTIFIER
+VarDec -> VAR IdentiObj;
+ProceHead -> PROCEDURE IDENTIFIER;
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+Factor -> CONSTANT
+Term -> Factor
+Expr -> Term
+Condition -> Expr RELOP Expr
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+ExprObj -> Expr
+WriteStm -> WRITE(ExprObj)
+Statement -> WriteStm
+Statemt -> Statement;
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+Factor -> CONSTANT
+Term -> Factor
+Expr -> Expr - Term
+AssignStm -> IDENTIFIER := Expr
+Statement -> AssignStm
+Statemt -> Statemt Statement;
+CallStm -> CALL IDENTIFIER
+Statement -> CallStm
+Statemt -> Statemt Statement;
+ComplexStm -> _BEGIN_ Statemt Statement END
+Statement -> ComplexStm
+CondStm -> IF Condition THEN Statement
+Statement -> CondStm
+Statemt -> Statement;
+ComplexStm -> _BEGIN_ Statemt Statement END
+Statement -> ComplexStm
+subProg -> Statement
+ProceDec -> ProceHead subProg ProceDec;
+ProceHead -> PROCEDURE IDENTIFIER;
+CDefine -> IDENTIFIER = CONSTANT
+ConstDef -> CDefine
+ConstDec -> CONST ConstDef;
+ProceHead -> PROCEDURE IDENTIFIER;
+IdentiObj -> IDENTIFIER
+IdentiObj -> IdentiObj, IDENTIFIER
+IdentiObj -> IdentiObj, IDENTIFIER
+IdentiObj -> IdentiObj, IDENTIFIER
+VarDec -> VAR IdentiObj;
+ProceHead -> PROCEDURE IDENTIFIER;
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+ExprObj -> Expr
+WriteStm -> WRITE(ExprObj)
+Statement -> WriteStm
+Statemt -> Statement;
+ComplexStm -> _BEGIN_ Statemt Statement END
+Statement -> ComplexStm
+subProg -> Statement
+ProceDec -> ProceHead subProg ProceDec;
+DeclarePart -> VarDec ProceDec
+IdentiObj -> IDENTIFIER
+ReadStm -> READ(IdentiObj)
+Statement -> ReadStm
+Statemt -> Statement;
+IdentiObj -> IDENTIFIER
+ReadStm -> READ(IdentiObj)
+Statement -> ReadStm
+Statemt -> Statemt Statement;
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+Factor -> CONSTANT
+Term -> Factor
+Expr -> Term
+Condition -> Expr RELOP Expr
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+Factor -> CONSTANT
+Term -> Factor
+Expr -> Term
+Condition -> Expr RELOP Expr
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+AssignStm -> IDENTIFIER := Expr
+Statement -> AssignStm
+Statemt -> Statement;
+Factor -> CONSTANT
+Term -> Factor
+Expr -> Term
+AssignStm -> IDENTIFIER := Expr
+Statement -> AssignStm
+Statemt -> Statemt Statement;
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Expr + Term
+AssignStm -> IDENTIFIER := Expr
+Statement -> AssignStm
+Statemt -> Statemt Statement;
+Factor -> IDENTIFIER
+Term -> Factor
+Factor -> CONSTANT
+Term -> Term * Factor
+Expr -> Term
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Expr + Term
+AssignStm -> IDENTIFIER := Expr
+Statement -> AssignStm
+Statemt -> Statemt Statement;
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+Factor -> CONSTANT
+Term -> Factor
+Expr -> Expr - Term
+AssignStm -> IDENTIFIER := Expr
+Statement -> AssignStm
+Statemt -> Statemt Statement;
+ComplexStm -> _BEGIN_ Statemt Statement END
+Statement -> ComplexStm
+CondStm -> IF Condition THEN Statement
+Statement -> CondStm
+CondStm -> IF Condition THEN Statement
+Statement -> CondStm
+Statemt -> Statemt Statement;
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+ExprObj -> Expr
+WriteStm -> WRITE(ExprObj)
+Statement -> WriteStm
+Statemt -> Statemt Statement;
+ComplexStm -> _BEGIN_ Statemt Statement END
+Statement -> ComplexStm
+subProg -> DeclarePart Statement
+ProceDec -> ProceHead subProg ProceDec;
+DeclarePart -> ConstDec ProceDec
+IdentiObj -> IDENTIFIER
+ReadStm -> READ(IdentiObj)
+Statement -> ReadStm
+Statemt -> Statement;
+IdentiObj -> IDENTIFIER
+ReadStm -> READ(IdentiObj)
+Statement -> ReadStm
+Statemt -> Statemt Statement;
+IdentiObj -> IDENTIFIER
+ReadStm -> READ(IdentiObj)
+Statement -> ReadStm
+Statemt -> Statemt Statement;
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+Condition -> Expr RELOP Expr
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+AssignStm -> IDENTIFIER := Expr
+Statement -> AssignStm
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+AssignStm -> IDENTIFIER := Expr
+Statement -> AssignStm
+Statement -> IF Condition THEN Statement ELSE Statement
+Statement -> CondStm
+Statemt -> Statemt Statement;
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+Condition -> Expr RELOP Expr
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+AssignStm -> IDENTIFIER := Expr
+Statement -> AssignStm
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+AssignStm -> IDENTIFIER := Expr
+Statement -> AssignStm
+Statement -> IF Condition THEN Statement ELSE Statement
+Statement -> CondStm
+Statemt -> Statemt Statement;
+Factor -> IDENTIFIER
+Term -> Factor
+Expr -> Term
+ExprObj -> Expr
+WriteStm -> WRITE(ExprObj)
+Statement -> WriteStm
+Statemt -> Statemt Statement;
+CallStm -> CALL IDENTIFIER
+Statement -> CallStm
+Statemt -> Statemt Statement;
+ComplexStm -> _BEGIN_ Statemt Statement END
+Statement -> ComplexStm
+subProg -> DeclarePart Statement
+ProceDec -> ProceDec ProceHead subProg;
+ProceHead -> PROCEDURE IDENTIFIER;
+IdentiObj -> IDENTIFIER
+IdentiObj -> IdentiObj, IDENTIFIER
+VarDec -> VAR IdentiObj;
+DeclarePart -> VarDec
+IdentiObj -> IDENTIFIER
+ReadStm -> READ(IdentiObj)
+Statement -> ReadStm
+Statemt -> Statement;
+CaseHead -> CASE IDENTIFIER COLON
+Factor -> CONSTANT
+Term -> Factor
+Expr -> Term
+AssignStm -> IDENTIFIER := Expr
+Statement -> AssignStm
+Statemt -> Statement;
+CaseBody -> CONSTANT COLON Statemt
+Factor -> CONSTANT
+Term -> Factor
+Expr -> Term
+AssignStm -> IDENTIFIER := Expr
+Statement -> AssignStm
+Statemt -> Statement;
+CaseBody -> CaseBody CONSTANT COLON Statemt
+Factor -> CONSTANT
+Term -> Factor
+Expr -> Term
+AssignStm -> IDENTIFIER := Expr
+Statement -> AssignStm
+Statemt -> Statement;
+CaseBody -> CaseBody CONSTANT COLON Statemt
+CaseStm -> CaseHead CaseBody ENDCASE
+Statement -> CaseStm
+Statemt -> Statemt Statement;
+ComplexStm -> _BEGIN_ Statemt Statement END
+Statement -> ComplexStm
+subProg -> DeclarePart Statement
+ProceDec -> ProceDec ProceHead subProg;
+DeclarePart -> VarDec ProceDec
+IdentiObj -> IDENTIFIER
+ReadStm -> READ(IdentiObj)
+Statement -> ReadStm
+Statemt -> Statement;
+CallStm -> CALL IDENTIFIER
+Statement -> CallStm
+Statemt -> Statemt Statement;
+CallStm -> CALL IDENTIFIER
+Statement -> CallStm
+Statemt -> Statemt Statement;
+ComplexStm -> _BEGIN_ Statemt Statement END
+Statement -> ComplexStm
+subProg -> DeclarePart Statement
+Program -> subProg.
