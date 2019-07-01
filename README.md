@@ -72,8 +72,6 @@ PL0编译器实验报告(←看字！三个部分的实验报告汇总)
 
 3. 再次提醒语法和语义部分需要在编译Syntax.tab.c前在其中/* Shift the lookahead token. */的注释下面添加一行 'Process(key);'。
 
-4. 都看到这了，点个star再走呗。
-
 
 ## 参考资料：
 1. pl0语言简介 https://wenku.baidu.com/view/5c16572a4b73f242336c5f68.html
