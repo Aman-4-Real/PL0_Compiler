@@ -1,7 +1,7 @@
 # PL0_Compiler
 编译原理实验  C语言实现的pl0编译器  flex&amp;bison
 
-博客：https://blog.csdn.net/weixin_40267501/article/details/92759717#_C_17
+博客：https://blog.csdn.net/weixin_40267501/article/details/92759717
 
 ## 实验构成及说明
 ### 1.词法部分 2.语法部分 3.语义部分
